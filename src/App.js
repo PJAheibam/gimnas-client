@@ -1,7 +1,8 @@
-import logo from "./logo.svg";
+import { ThemeProvider } from "styled-components";
+import { dark } from "./styles/Theme";
 
 function App() {
-  return <div></div>;
+  return <ThemeProvider theme={dark}></ThemeProvider>;
 }
 
 export default App;
