@@ -19,6 +19,8 @@ export const Wrapper = styled.section`
 export const Button = styled.button`
   cursor: pointer;
   background-color: transparent;
+  background-color: ${(p) =>
+    p.isactive === "true" ? p.theme.background[100] : "transparent"};
   border-radius: 50%;
   outline: none;
   border: none;
@@ -63,7 +65,7 @@ export const Section = styled.section`
   align-items: center;
   gap: 1rem;
   margin-block: 1rem;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   background-color: ${(p) => p.theme.background[200]};
 `;
 
@@ -88,10 +90,15 @@ export const Value = styled.h3`
 `;
 
 export const Heading = styled.h3`
+  margin-top: 2rem;
   letter-spacing: 1px;
   font-weight: 500;
+  text-transform: capitalize;
 `;
-export const SubHeading = styled.h4``;
+export const SubHeading = styled.h4`
+  font-weight: 400;
+  letter-spacing: 1px;
+`;
 
 export const BreakBtn = styled(Button)`
   padding: 1rem;
@@ -103,4 +110,8 @@ export const BreakBtn = styled(Button)`
     color: ${(p) => p.theme.text.hovered};
     background-color: ${(p) => p.theme.background[100]};
   }
+`;
+
+export const Time = styled.p`
+  color: ${(p) => p.theme.text.disabled};
 `;
