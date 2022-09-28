@@ -75,6 +75,7 @@ export const Info = styled.div`
 `;
 
 export const Section = styled.section`
+  pointer-events: ${(p) => (p.isopen ? "auto" : "none")};
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -107,6 +108,7 @@ export const Value = styled.h3`
 `;
 
 export const Heading = styled.h3`
+  pointer-events: ${(p) => (p.isopen ? "auto" : "none")};
   margin-top: 2rem;
   letter-spacing: 1px;
   font-weight: 500;
@@ -136,6 +138,7 @@ export const Time = styled.p`
 `;
 
 export const CompletedBtn = styled(Button)`
+  pointer-events: ${(p) => (p.isopen ? "auto" : "none")};
   margin-inline: auto;
   height: auto;
   width: auto;
