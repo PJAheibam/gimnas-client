@@ -11,5 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     :root{
         color-scheme: dark;
     }
-    
+    body{
+        font-family: 'Jost', sans-serif;
+    }
 `;
