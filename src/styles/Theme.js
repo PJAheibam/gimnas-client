@@ -18,7 +18,9 @@ export const dark = {
     300: "hsla(0,0%, 7%,1)",
   },
   palette: {
-    primary: "hsl(207, 90%, 77%)",
+    primary: "hsl(207, 60%, 60%)",
+    primaryBg: "hsla(207, 60%, 60%,0.15)",
+    primaryHovered: "hsla(207, 60%, 60%, 0.25)",
     secondary: "hsl(291, 47%, 71%)",
     success: "hsl(123, 38%, 57%)",
     error: "hsl(4, 90%, 58%)",

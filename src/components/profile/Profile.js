@@ -15,6 +15,7 @@ import {
   SubHeading,
   BreakBtn,
   Time,
+  CompletedBtn,
 } from "./Profile.styles";
 import profilePic from "../../assets/profile-pic.jpg";
 import { MdOutlineArrowForwardIos as Arrow } from "react-icons/md";
@@ -103,6 +104,8 @@ const Profile = () => {
           &thinsp;seconds
         </Time>
       </Section>
+
+      <CompletedBtn>Activity Completed</CompletedBtn>
     </Container>
   );
 };

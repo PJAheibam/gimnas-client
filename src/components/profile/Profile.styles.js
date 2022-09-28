@@ -34,6 +34,9 @@ export const Button = styled.button`
   &:focus-visible {
     ${FocusStyles}
   }
+  &:active {
+    scale: 0.975;
+  }
 `;
 
 export const Image = styled.img`
@@ -114,4 +117,17 @@ export const BreakBtn = styled(Button)`
 
 export const Time = styled.p`
   color: ${(p) => p.theme.text.disabled};
+`;
+
+export const CompletedBtn = styled(Button)`
+  margin-inline: auto;
+  height: auto;
+  width: auto;
+  border-radius: 0;
+  font-size: 1.15rem;
+  padding: 0.5em 1em;
+  background-color: ${(p) => p.theme.palette.primaryBg};
+  &:hover {
+    background-color: ${(p) => p.theme.palette.primaryHovered};
+  }
 `;
