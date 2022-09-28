@@ -11,4 +11,5 @@ export const GlobalStyle = createGlobalStyle`
     :root{
         color-scheme: dark;
     }
+    
 `;
