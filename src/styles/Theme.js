@@ -22,5 +22,6 @@ export const dark = {
     success: "hsl(123, 38%, 57%)",
     error: "hsl(4, 90%, 58%)",
     warning: "hsl(36, 100%, 57%)",
+    info: "#29b6f6",
   },
 };
