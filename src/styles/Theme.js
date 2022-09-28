@@ -3,6 +3,7 @@ export const dark = {
     primary: "hsla(0, 0%, 100%, 0.87)",
     secondary: "hsla(0, 0%, 100%, 0.75)",
     hovered: "hsla(0, 0%, 100%, 0.80)",
+    disabled: "hsla(0, 0%, 100%, 0.50)",
     on: {
       primary: "hsla(0, 0%, 100%, 0.87)",
       secondary: "hsla(0, 0%, 100%, 0.87)",

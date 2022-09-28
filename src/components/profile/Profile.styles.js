@@ -47,7 +47,9 @@ export const ProfileContainer = styled.section`
   gap: 1rem;
 `;
 
-export const Name = styled.h3``;
+export const Name = styled.h3`
+  letter-spacing: 1px;
+`;
 
 export const Location = styled.p`
   color: ${(p) => p.theme.text.secondary};
@@ -60,6 +62,9 @@ export const Section = styled.section`
   justify-content: space-around;
   align-items: center;
   gap: 1rem;
+  margin-block: 1rem;
+  padding: 0.5rem;
+  background-color: ${(p) => p.theme.background[200]};
 `;
 
 export const Prop = styled.p`
@@ -68,6 +73,34 @@ export const Prop = styled.p`
 `;
 
 export const Value = styled.h3`
+  position: relative;
   text-align: center;
   color: ${(p) => p.theme.text.primary};
+  &::after {
+    position: absolute;
+    top: 30%;
+    content: attr(data-unit);
+    color: ${(p) => p.theme.text.disabled};
+    font-weight: normal;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+`;
+
+export const Heading = styled.h3`
+  letter-spacing: 1px;
+  font-weight: 500;
+`;
+export const SubHeading = styled.h4``;
+
+export const BreakBtn = styled(Button)`
+  padding: 1rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  text-align: center;
+  color: ${(p) => p.theme.text.secondary};
+  &:hover {
+    color: ${(p) => p.theme.text.hovered};
+    background-color: ${(p) => p.theme.background[100]};
+  }
 `;
