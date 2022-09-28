@@ -142,10 +142,10 @@ export const CompletedBtn = styled(Button)`
   border-radius: 0;
   font-size: 1.15rem;
   padding: 0.5em 1em;
-  background-color: ${(p) => p.theme.palette.primaryBg};
+  background-color: ${(p) => p.theme.palette.primaryActive};
   opacity: ${(p) => (p.isopen ? 1 : 0)};
-  transition: opacity 700ms ease-out, background-color 300ms ease;
+  transition: opacity 700ms ease-out, background-color 500ms ease;
   &:hover {
-    background-color: ${(p) => p.theme.palette.primaryHovered};
+    background-color: ${(p) => p.theme.palette.primary};
   }
 `;

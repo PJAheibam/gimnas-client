@@ -13,5 +13,6 @@ export const GlobalStyle = createGlobalStyle`
     }
     body{
         font-family: 'Jost', sans-serif;
+        background-color: ${(p) => p.theme.background[300]};
     }
 `;
