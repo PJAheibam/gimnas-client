@@ -23,40 +23,47 @@ import { useSpring, animated } from "react-spring";
 
 const Profile = () => {
   const [breakTime, setBreakTime] = useState(0);
+  const [open, setOpen] = useState(false);
   const breakApi = useSpring({
     value: breakTime,
     from: { value: 0 },
   });
   return (
-    <Container>
+    <Container isopen={open}>
       <ProfileContainer>
-        <Button>
+        <Button onClick={() => setOpen(true)}>
           <Image src={profilePic} />
         </Button>
-        <Info>
+        <Info isopen={open}>
           <Name>Prosenjit Singha</Name>
           <Location>Juri, Sylhet</Location>
         </Info>
-        <Button style={{ marginLeft: "auto" }}>
+        <Button
+          aria-label="close"
+          title="close button"
+          onClick={() => setOpen(false)}
+          style={{ marginLeft: "auto" }}
+        >
           <Arrow size="1.5rem" />
         </Button>
       </ProfileContainer>
-      <Section>
-        <Info>
+      <Section isopen={open} style={{ marginTop: "2rem" }}>
+        <Info isopen={open}>
           <Value data-unit="kg">53</Value>
           <Prop>Weight</Prop>
         </Info>
-        <Info>
+        <Info isopen={open}>
           <Value data-unit="ft">5.85</Value>
           <Prop>Height</Prop>
         </Info>
-        <Info>
+        <Info isopen={open}>
           <Value data-unit="yrs">24</Value>
           <Prop>Age</Prop>
         </Info>
       </Section>
-      <Heading>Add a break</Heading>
-      <Section>
+
+      <Heading isopen={open}>Add a break</Heading>
+      <Section isopen={open}>
         <BreakBtn
           isactive={breakTime === 10 ? "true" : "false"}
           onClick={() => setBreakTime(10)}
@@ -88,13 +95,16 @@ const Profile = () => {
           50s
         </BreakBtn>
       </Section>
-      <Heading>Exercise details</Heading>
+
+      <Heading isopen={open}>Exercise details</Heading>
       <Section
+        isopen={open}
         style={{ justifyContent: "space-between", marginBottom: "0.5rem" }}
       >
         <SubHeading>Exercise time</SubHeading>
         <Time>{200} &thinsp;seconds</Time>
       </Section>
+
       <Section style={{ justifyContent: "space-between", marginTop: "0.5rem" }}>
         <SubHeading>Breaktime time</SubHeading>
         <Time>
@@ -105,7 +115,7 @@ const Profile = () => {
         </Time>
       </Section>
 
-      <CompletedBtn>Activity Completed</CompletedBtn>
+      <CompletedBtn isopen={open}>Activity Completed</CompletedBtn>
     </Container>
   );
 };
