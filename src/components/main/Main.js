@@ -1,14 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Wrapper,
-  Heading,
-  Cards,
-  Container,
-  ImageContainer,
-  Image,
-  Title,
-  Desc,
-} from "./Main.styls";
+import { Wrapper, Heading, Cards, Container } from "./Main.styls";
 import Card from "../card/Card";
 
 const Main = () => {

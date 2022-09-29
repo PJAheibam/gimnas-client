@@ -2,6 +2,10 @@ import styled from "styled-components";
 import { Wrapper } from "../../styles/Wrapper.styles";
 
 export const Header = styled(Wrapper)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding-block: 1.5rem;
   background-color: ${(props) => props.theme.background[100]};
 `;

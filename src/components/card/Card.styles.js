@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  background-color: ${(p) => p.theme.background[200]};
+`;
 
 export const ImageContainer = styled.figure`
   width: 100%;
@@ -23,4 +25,12 @@ export const Title = styled.h2`
 
 export const Desc = styled.p`
   color: ${(p) => p.theme.text.secondary};
+`;
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-block: 1rem;
+  padding-inline: 1rem;
 `;
