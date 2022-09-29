@@ -1,15 +1,15 @@
 export const dark = {
   text: {
-    primary: "hsla(0, 0%, 100%, 0.87)",
-    secondary: "hsla(0, 0%, 100%, 0.75)",
-    hovered: "hsla(0, 0%, 100%, 0.80)",
-    disabled: "hsla(0, 0%, 100%, 0.50)",
+    primary: "hsla(0, 0%, 93%, 0.87)",
+    secondary: "hsla(0, 0%, 93%, 0.75)",
+    hovered: "hsla(0, 0%, 93%, 0.80)",
+    disabled: "hsla(0, 0%, 93%, 0.50)",
     on: {
-      primary: "hsla(0, 0%, 100%, 0.87)",
-      secondary: "hsla(0, 0%, 100%, 0.87)",
-      warning: "hsla(0, 0%, 100%, 0.87)",
-      error: "hsla(0, 0%, 100%, 0.87)",
-      success: "hsla(0, 0%, 100%, 0.87)",
+      primary: "hsla(0, 0%, 93%, 0.87)",
+      secondary: "hsla(0, 0%, 93%, 0.87)",
+      warning: "hsla(0, 0%, 93%, 0.87)",
+      error: "hsla(0, 0%, 93%, 0.87)",
+      success: "hsla(0, 0%, 93%, 0.87)",
     },
   },
   background: {
