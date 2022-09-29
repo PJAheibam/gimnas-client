@@ -1,0 +1,44 @@
+[
+  {
+    "id": "01",
+    "title": "Hardstyle plank",
+    "desc": "Lying face down on the ground, prop yourself up into a forearm plank position. Make sure your elbows are aligned underneath your shoulders, and that your hands are balled up in fists. Your forearms should be parallel to one another. Hold for 10 to 20 seconds per set.",
+    "timeRequired": 20,
+    "imageUrl": "https://media.gq.com/photos/5b22b33387c1974f5df8dbb2/master/w_1600,c_limit/ab-workouts-GQ-alex-reside-PLANK.gif"
+  },
+  {
+    "id": "02",
+    "title": "Dead bug",
+    "desc": "Lay face up on the floor with arms straight above your shoulders. To start, bring your knees directly over your hips and bend at the knee so that your calf forms a 90-degree angle with your thigh. Next, simultaneously lower your left arm above your head while straightening your right leg and sending it towards the floor. Pause, return to the starting position, and then repeat on the opposite side. Do 14 alternating reps to complete one set.",
+    "timeRequired": 30,
+    "imageUrl": "https://media.gq.com/photos/5b22b33287d09e2fcc4c134a/master/w_1600,c_limit/ab-workouts-GQ-alex-reside-deadbug.gif"
+  },
+  {
+    "id": "03",
+    "title": "Hollow extension-to-cannonball",
+    "desc": "Get into a cannonball-type shape on your back, hugging your knees into your chest—yes, just like you’re at the pool at summer camp again. Simultaneously extend your legs and arms outwards into a “hollow” position, pressing your lower back to the floor. Hold for five seconds before curling up again, and complete five reps for one set.",
+    "timeRequired": 20,
+    "imageUrl": "https://media.gq.com/photos/5b22b3329634a3652118e93c/master/w_1600,c_limit/ab-workouts-GQ-alex-reside-CANNONBALL.gif"
+  },
+  {
+    "id": "04",
+    "title": "Dumbbell side bend",
+    "desc": "Stand with your feet hip-width apart and hold a dumbbell in your right hand, palm facing inwards towards the torso. Keep your back straight, activate your core, and then bend to the side as far as possible—but only at the waist. Hold for one second at the bottom of your range of motion, and return to start for one rep. Do between 12 and 20 reps for one set.",
+    "timeRequired": 30,
+    "imageUrl": "https://media.gq.com/photos/5b22b33384c7ff5c52a48785/master/w_1600,c_limit/ab-workouts-GQ-alex-reside-SIDE-BEND.gif"
+  },
+  {
+    "id": "05",
+    "title": "Barbell back squat",
+    "desc": "With your feet shoulder-width apart, lift a barbell off the rig, centering it evenly across your shoulders. (This version of the squat targets the core, not the legs, and so you should be using far less weight than you would for a traditional back squat.) Send your glutes back like you’re lowering into a chair, bending at the knees as deeply as possible. Press through your heels to return to the starting position for one rep. Do 12 reps for one set.",
+    "timeRequired": 40,
+    "imageUrl": "https://media.gq.com/photos/5b22b33387d09e2fcc4c134c/master/w_1600,c_limit/ab-workouts-GQ-alex-reside-SQUAT.gif"
+  },
+  {
+    "id": "06",
+    "title": "Bird dog",
+    "desc": "Think of this as an upside-down dead bug. Start in a tabletop position, with your shoulders over wrists and hips over knees. Engage your core while simultaneously lifting your right arm and left leg. Your foot should be flexed as you kick back, and your palm should face in towards your body. Pause for one second when your arm and leg are at the same height as your torso, and then bring your elbow and knee to touch underneath the body. Repeat on the other side for one rep, and do five reps for one set.",
+    "timeRequired": 30,
+    "imageUrl": "https://media.gq.com/photos/5b22b3326ebd991dbc5e1ddc/master/w_1600,c_limit/ab-workouts-GQ-alex-reside-knee-BIRDDOG.gif"
+  }
+]

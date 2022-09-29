@@ -3,6 +3,7 @@ import { dark } from "./styles/Theme";
 import { GlobalStyle } from "./styles/GlobalStyles";
 import Header from "./components/header/Header";
 import Profile from "./components/profile/Profile";
+import Main from "./components/main/Main";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <GlobalStyle />
       <Header />
       <Profile />
+      <Main />
     </ThemeProvider>
   );
 }
