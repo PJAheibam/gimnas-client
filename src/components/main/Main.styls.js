@@ -24,7 +24,7 @@ export const Cards = styled.section`
   }
   @media ${device.xl} {
     grid-template-columns: repeat(3, 1fr);
-    width: calc(100vw - 30rem);
+    width: calc(100% - 20rem);
   }
 `;
 

@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background-color: ${(p) => p.theme.background[200]};
+  display: flex;
+  flex-direction: column;
 `;
 
 export const ImageContainer = styled.figure`
@@ -62,6 +64,16 @@ export const Button = styled.button`
   background-color: ${(p) => p.theme.palette.secondary};
   padding: 0.5em 1em;
   text-align: center;
-  margin-left: 1rem;
+  &:active {
+    scale: 0.99;
+  }
+`;
+
+export const Footer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: 1rem;
   margin-bottom: 1rem;
+  margin-top: auto;
 `;

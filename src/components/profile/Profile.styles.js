@@ -4,7 +4,7 @@ import { device } from "../../utils/device";
 
 const openStyles = css`
   left: 0;
-  padding-inline: max(1.5rem, calc(100vw - 80rem));
+  padding-inline: max(1.5rem, calc(100vw - 1280px));
 `;
 
 const easing = "cubic-bezier(0.38, 0.41, 0.3, 1.07)";
@@ -24,8 +24,8 @@ export const Container = styled.aside`
   transition: left 1000ms ${easing}, background-color 1000ms ${easing};
 
   @media ${device.xl} {
-    width: 25rem;
-    left: calc(100vw - 25rem);
+    width: calc(100vw - 1280px + 20rem);
+    left: calc(100vw - 26rem);
     padding-inline: 2rem;
   }
 `;

@@ -10,6 +10,7 @@ import {
   Text,
   TimeV,
   Button,
+  Footer,
 } from "./Card.styles";
 
 const Card = ({ data, setExerciseTime }) => {
@@ -26,11 +27,13 @@ const Card = ({ data, setExerciseTime }) => {
           <TimeV>{data.timeRequired}&thinsp;s</TimeV>
         </Time>
       </Content>
-      <Button
-        onClick={() => setExerciseTime((prev) => prev + data.timeRequired)}
-      >
-        Add to list
-      </Button>
+      <Footer>
+        <Button
+          onClick={() => setExerciseTime((prev) => prev + data.timeRequired)}
+        >
+          Add to list
+        </Button>
+      </Footer>
     </Container>
   );
 };
