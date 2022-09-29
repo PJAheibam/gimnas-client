@@ -14,14 +14,15 @@ export const Container = styled.aside`
   top: 0;
   padding: 1.5rem;
   padding-top: 0.95rem;
-  left: calc(100vw - max(1.5rem, calc(100vw - 80rem)) - 4.3rem);
+  left: calc(100vw - max(1.5rem, calc(100vw - 1280px)) - 60px - 1.5rem);
   ${(p) => (p.isopen ? openStyles : "")}
   width: 100%;
   height: 100%;
   background-color: ${(props) =>
     props.isopen ? props.theme.background[300] : "transparent"};
   /* background-color: rgba(0, 0, 0, 0.35); */
-  overflow-y: scroll;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
   transition: left 1000ms ${easing}, background-color 1000ms ${easing};
 
   @media ${device.xl} {
@@ -35,7 +36,6 @@ export const Wrapper = styled.section``;
 
 export const Button = styled.button`
   cursor: pointer;
-  background-color: transparent;
   background-color: transparent;
   border-radius: 50%;
   outline: none;
@@ -159,10 +159,10 @@ export const CompletedBtn = styled(Button)`
   border-radius: 0;
   font-size: 1.15rem;
   padding: 0.5em 1em;
-  background-color: ${(p) => p.theme.palette.primaryActive};
+  background-color: ${(p) => p.theme.palette.secondary};
   opacity: ${(p) => (p.isopen ? 1 : 0)};
   transition: opacity 700ms ease-out, background-color 500ms ease;
   &:hover {
-    background-color: ${(p) => p.theme.palette.primary};
+    background-color: ${(p) => p.theme.palette.secondaryActive};
   }
 `;

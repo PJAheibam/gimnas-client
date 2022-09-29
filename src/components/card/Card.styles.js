@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import FocusStyles from "../../styles/FocusStyles";
 export const Container = styled.div`
   background-color: ${(p) => p.theme.background[200]};
   display: flex;
@@ -61,11 +61,21 @@ export const Button = styled.button`
   cursor: pointer;
   border: none;
   outline: none;
-  background-color: ${(p) => p.theme.palette.secondary};
+  background-color: ${(p) => p.theme.palette.secondaryBg};
+  color: ${(p) => p.theme.palette.secondaryActive};
+  font-weight: 500;
+  letter-spacing: 1px;
   padding: 0.5em 1em;
   text-align: center;
+  transition: background-color 500ms ease-out;
   &:active {
     scale: 0.99;
+  }
+  &:hover {
+    background-color: ${(p) => p.theme.palette.secondaryHovered};
+  }
+  &:focus-visible {
+    ${FocusStyles}
   }
 `;
 

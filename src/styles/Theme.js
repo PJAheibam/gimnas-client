@@ -1,6 +1,6 @@
 export const dark = {
   text: {
-    primary: "hsla(0, 0%, 93%, 0.87)",
+    primary: "hsla(0, 0%, 93%, 0.93)",
     secondary: "hsla(0, 0%, 93%, 0.75)",
     hovered: "hsla(0, 0%, 93%, 0.80)",
     disabled: "hsla(0, 0%, 93%, 0.50)",
@@ -22,8 +22,8 @@ export const dark = {
     primary: "hsl(218, 13%, 30%)",
     primaryBg: "hsla(217, 10%, 25%, 0.1)",
     primaryHovered: "hsla(217, 10%, 25%, 0.25)",
-    secondaryActive: "hsl(15, 67%, 52%)",
-    secondary: "hsl(15, 67%, 55%)",
+    secondaryActive: "hsl(15, 67%, 55%)",
+    secondary: "hsl(15, 67%, 60%)",
     secondaryBg: "hsla(15, 67%, 52%, 0.1)",
     secondaryHovered: "hsla(15, 67%, 52%, 0.25)",
     success: "hsl(123, 38%, 50%)",
