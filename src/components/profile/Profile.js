@@ -47,6 +47,7 @@ const Profile = () => {
           <Arrow size="1.5rem" />
         </Button>
       </ProfileContainer>
+
       <Section isopen={open} style={{ marginTop: "2rem" }}>
         <Info isopen={open}>
           <Value data-unit="kg">53</Value>
@@ -105,7 +106,10 @@ const Profile = () => {
         <Time>{200} &thinsp;seconds</Time>
       </Section>
 
-      <Section style={{ justifyContent: "space-between", marginTop: "0.5rem" }}>
+      <Section
+        isopen={open}
+        style={{ justifyContent: "space-between", marginTop: "0.5rem" }}
+      >
         <SubHeading>Breaktime time</SubHeading>
         <Time>
           <animated.span>

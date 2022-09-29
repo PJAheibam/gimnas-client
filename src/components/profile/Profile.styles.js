@@ -28,8 +28,7 @@ export const Wrapper = styled.section``;
 export const Button = styled.button`
   cursor: pointer;
   background-color: transparent;
-  background-color: ${(p) =>
-    p.isactive === "true" ? p.theme.background[100] : "transparent"};
+  background-color: transparent;
   border-radius: 50%;
   outline: none;
   border: none;
@@ -127,9 +126,16 @@ export const BreakBtn = styled(Button)`
   font-weight: 500;
   text-align: center;
   color: ${(p) => p.theme.text.secondary};
+  background-color: ${(p) =>
+    p.isactive === "true" ? p.theme.palette.secondaryActive : "transparent"};
+
+  transition: background-color 500ms ease-out;
   &:hover {
     color: ${(p) => p.theme.text.hovered};
-    background-color: ${(p) => p.theme.background[100]};
+    background-color: ${(p) =>
+      p.isactive === "true"
+        ? p.theme.palette.secondary
+        : p.theme.palette.secondaryHovered};
   }
 `;
 
