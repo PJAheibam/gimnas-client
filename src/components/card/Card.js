@@ -12,7 +12,7 @@ import {
   Button,
 } from "./Card.styles";
 
-const Card = ({ data }) => {
+const Card = ({ data, setExerciseTime }) => {
   return (
     <Container>
       <ImageContainer>
@@ -26,7 +26,11 @@ const Card = ({ data }) => {
           <TimeV>{data.timeRequired}&thinsp;s</TimeV>
         </Time>
       </Content>
-      <Button>Add to list</Button>
+      <Button
+        onClick={() => setExerciseTime((prev) => prev + data.timeRequired)}
+      >
+        Add to list
+      </Button>
     </Container>
   );
 };

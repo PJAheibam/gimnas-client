@@ -21,7 +21,7 @@ import profilePic from "../../assets/profile-pic.jpg";
 import { MdOutlineArrowForwardIos as Arrow } from "react-icons/md";
 import { useSpring, animated } from "react-spring";
 
-const Profile = () => {
+const Profile = ({ exerciseTime }) => {
   const [breakTime, setBreakTime] = useState(0);
   const [open, setOpen] = useState(false);
   const breakApi = useSpring({
@@ -103,7 +103,7 @@ const Profile = () => {
         style={{ justifyContent: "space-between", marginBottom: "0.5rem" }}
       >
         <SubHeading>Exercise time</SubHeading>
-        <Time>{200} &thinsp;seconds</Time>
+        <Time>{exerciseTime}&thinsp;seconds</Time>
       </Section>
 
       <Section

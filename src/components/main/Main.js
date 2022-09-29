@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Wrapper, Heading, Cards, Container } from "./Main.styls";
 import Card from "../card/Card";
 
-const Main = () => {
+const Main = ({ setExerciseTime }) => {
   // fetching data
   const [exercises, setExercises] = useState([]);
   useEffect(() => {
@@ -21,7 +21,11 @@ const Main = () => {
         </Heading>
         <Cards>
           {exercises.map((exercise) => (
-            <Card data={exercise} key={exercise.id} />
+            <Card
+              data={exercise}
+              key={exercise.id}
+              setExerciseTime={setExerciseTime}
+            />
           ))}
         </Cards>
       </Container>
