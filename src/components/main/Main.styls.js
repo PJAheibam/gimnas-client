@@ -24,8 +24,11 @@ export const Cards = styled.section`
   }
   @media ${device.xl} {
     grid-template-columns: repeat(3, 1fr);
-    width: calc(100% - 20rem);
   }
 `;
 
-export const Container = styled.article``;
+export const Container = styled.article`
+  @media ${device.xl} {
+    width: calc(100% - 20rem);
+  }
+`;
