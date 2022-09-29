@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import FocusStyles from "../../styles/FocusStyles";
+import { device } from "../../utils/device";
 
 const openStyles = css`
   left: 0;
@@ -21,6 +22,12 @@ export const Container = styled.aside`
     props.isopen ? props.theme.background[300] : "transparent"};
   /* background-color: rgba(0, 0, 0, 0.35); */
   transition: left 1000ms ${easing}, background-color 1000ms ${easing};
+
+  @media ${device.xl} {
+    width: 25rem;
+    left: calc(100vw - 25rem);
+    padding-inline: 2rem;
+  }
 `;
 
 export const Wrapper = styled.section``;

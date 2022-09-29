@@ -25,6 +25,11 @@ export const Title = styled.h2`
 
 export const Desc = styled.p`
   color: ${(p) => p.theme.text.secondary};
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 `;
 
 export const Content = styled.div`
