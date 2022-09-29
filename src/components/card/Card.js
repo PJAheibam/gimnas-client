@@ -11,16 +11,10 @@ import {
   TimeV,
   Button,
   Footer,
+  Added,
 } from "./Card.styles";
 
-const Card = ({ data, updateExerciseTime, added, setExerciseTime }) => {
-  // useEffect(() => {
-  //   if (added) {
-  //     setExerciseTime((prev) => prev + data.timeRequired * added);
-  //     console.info(data.id, data.timeRequired * added);
-  //   }
-  // }, []);
-  // console.log(data.id, added ? "true" : "false");
+const Card = ({ data, updateExerciseTime, added }) => {
   return (
     <Container>
       <ImageContainer>
@@ -38,6 +32,7 @@ const Card = ({ data, updateExerciseTime, added, setExerciseTime }) => {
         <Button onClick={() => updateExerciseTime(data.id, data.timeRequired)}>
           Add to list
         </Button>
+        <Added>Added: {added}</Added>
       </Footer>
     </Container>
   );

@@ -77,3 +77,10 @@ export const Footer = styled.div`
   margin-bottom: 1rem;
   margin-top: auto;
 `;
+
+export const Added = styled.p`
+  user-select: none;
+  pointer-events: none;
+  text-align: right;
+  color: hsla(0, 0%, 93%, 0.25);
+`;

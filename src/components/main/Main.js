@@ -5,13 +5,11 @@ import Card from "../card/Card";
 const EXERCISE_TIME = "exercise-time";
 
 const Main = ({ setExerciseTime }) => {
-  console.info("main");
   // fetching data
   const [exercises, setExercises] = useState([]);
 
   // added exercise data
   const eTime = JSON.parse(localStorage.getItem(EXERCISE_TIME)) || {};
-  console.log(eTime);
 
   useEffect(() => {
     fetch("data.json")
@@ -28,7 +26,6 @@ const Main = ({ setExerciseTime }) => {
     } else {
       eTime[id] = 1;
     }
-    console.log(eTime);
     localStorage.setItem(EXERCISE_TIME, JSON.stringify(eTime));
   };
 
@@ -38,7 +35,9 @@ const Main = ({ setExerciseTime }) => {
       totalExerciseTime += exercise.timeRequired * eTime[exercise.id];
     }
   }
-  setExerciseTime(totalExerciseTime);
+  useEffect(() => {
+    setExerciseTime(totalExerciseTime);
+  }, [exercises]);
 
   return (
     <Wrapper as="main">
