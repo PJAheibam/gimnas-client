@@ -34,3 +34,29 @@ export const Content = styled.div`
   margin-block: 1rem;
   padding-inline: 1rem;
 `;
+
+export const Time = styled.div`
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const Text = styled.span`
+  color: ${(p) => p.theme.text.primary};
+  font-weight: 500;
+`;
+
+export const TimeV = styled.span`
+  color: ${(p) => p.theme.text.secondary};
+`;
+
+export const Button = styled.button`
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: ${(p) => p.theme.palette.secondary};
+  padding: 0.5em 1em;
+  text-align: center;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+`;
