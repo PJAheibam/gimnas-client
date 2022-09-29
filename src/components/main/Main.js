@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Wrapper, Heading, Cards, Container } from "./Main.styls";
 import Card from "../card/Card";
+import Blog from "../blog/Blog";
 
 const EXERCISE_TIME = "exercise-time";
 
@@ -58,6 +59,7 @@ const Main = ({ setExerciseTime }) => {
             ))}
         </Cards>
       </Container>
+      <Blog />
     </Wrapper>
   );
 };
