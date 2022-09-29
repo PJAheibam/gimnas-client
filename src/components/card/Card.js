@@ -6,6 +6,10 @@ import {
   Title,
   Desc,
   Content,
+  Time,
+  Text,
+  TimeV,
+  Button,
 } from "./Card.styles";
 
 const Card = ({ data }) => {
@@ -17,7 +21,12 @@ const Card = ({ data }) => {
       <Content>
         <Title>{data.title}</Title>
         <Desc> {data.desc} </Desc>
+        <Time>
+          <Text>Time required:</Text>
+          <TimeV>{data.timeRequired}&thinsp;s</TimeV>
+        </Time>
       </Content>
+      <Button>Add to list</Button>
     </Container>
   );
 };
