@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Container,
   ImageContainer,
@@ -13,7 +13,14 @@ import {
   Footer,
 } from "./Card.styles";
 
-const Card = ({ data, setExerciseTime }) => {
+const Card = ({ data, updateExerciseTime, added, setExerciseTime }) => {
+  // useEffect(() => {
+  //   if (added) {
+  //     setExerciseTime((prev) => prev + data.timeRequired * added);
+  //     console.info(data.id, data.timeRequired * added);
+  //   }
+  // }, []);
+  // console.log(data.id, added ? "true" : "false");
   return (
     <Container>
       <ImageContainer>
@@ -28,9 +35,7 @@ const Card = ({ data, setExerciseTime }) => {
         </Time>
       </Content>
       <Footer>
-        <Button
-          onClick={() => setExerciseTime((prev) => prev + data.timeRequired)}
-        >
+        <Button onClick={() => updateExerciseTime(data.id, data.timeRequired)}>
           Add to list
         </Button>
       </Footer>

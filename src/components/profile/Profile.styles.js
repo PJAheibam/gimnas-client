@@ -21,6 +21,7 @@ export const Container = styled.aside`
   background-color: ${(props) =>
     props.isopen ? props.theme.background[300] : "transparent"};
   /* background-color: rgba(0, 0, 0, 0.35); */
+  overflow-y: scroll;
   transition: left 1000ms ${easing}, background-color 1000ms ${easing};
 
   @media ${device.xl} {

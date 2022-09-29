@@ -12,7 +12,7 @@ function App() {
     <ThemeProvider theme={dark}>
       <GlobalStyle />
       <Header />
-      <Profile exerciseTime={exerciseTime} />
+      <Profile exerciseTime={exerciseTime} setExerciseTime={setExerciseTime} />
       <Main setExerciseTime={setExerciseTime} />
     </ThemeProvider>
   );

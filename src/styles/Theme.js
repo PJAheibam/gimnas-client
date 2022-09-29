@@ -27,7 +27,7 @@ export const dark = {
     secondaryBg: "hsla(15, 67%, 52%, 0.1)",
     secondaryHovered: "hsla(15, 67%, 52%, 0.25)",
     success: "hsl(123, 38%, 50%)",
-    error: "hsl(4, 90%, 58%)",
+    error: "hsl(4, 90%, 62%)",
     warning: "hsl(36, 100%, 57%)",
     info: "#29b6f6",
   },

@@ -21,10 +21,13 @@ import profilePic from "../../assets/profile-pic.jpg";
 import { MdOutlineArrowForwardIos as Arrow } from "react-icons/md";
 import { useSpring, animated } from "react-spring";
 import { useBreakpoint } from "react-use-size";
+import { toast, ToastContainer, Slide } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const BREAK_TIME = "break-time";
+const EXERCISE_TIME = "exercise-time";
 
-const Profile = ({ exerciseTime }) => {
+const Profile = ({ exerciseTime, setExerciseTime }) => {
   //geting breaktime from local storage
   const localBreakTime = parseInt(localStorage.getItem(BREAK_TIME));
 
@@ -33,15 +36,34 @@ const Profile = ({ exerciseTime }) => {
     isNaN(localBreakTime) ? 0 : localBreakTime
   );
   const [open, setOpen] = useState(false);
+  //spring animation start
   const breakApi = useSpring({
     value: breakTime,
     from: { value: 0 },
   });
+
+  const exerciseTimeApi = useSpring({
+    eTime: exerciseTime,
+    from: { eTime: 0 },
+  });
+  //spring animation end
+
   const isOpen = isLarge || open;
 
   const updateBreakTime = (time) => {
     setBreakTime(time);
     localStorage.setItem(BREAK_TIME, time);
+  };
+
+  // Toast
+  const notify = () => toast.success("Activity Completed!");
+
+  const handleCompletedClick = () => {
+    notify();
+    setBreakTime(0);
+    setExerciseTime(0);
+    localStorage.removeItem(BREAK_TIME);
+    localStorage.removeItem(EXERCISE_TIME);
   };
 
   return (
@@ -119,7 +141,12 @@ const Profile = ({ exerciseTime }) => {
         style={{ justifyContent: "space-between", marginBottom: "0.5rem" }}
       >
         <SubHeading>Exercise time</SubHeading>
-        <Time>{exerciseTime}&thinsp;seconds</Time>
+        <Time>
+          <animated.span>
+            {exerciseTimeApi.eTime.to((t) => t.toFixed(0))}
+          </animated.span>
+          &thinsp;seconds
+        </Time>
       </Section>
 
       <Section
@@ -135,7 +162,22 @@ const Profile = ({ exerciseTime }) => {
         </Time>
       </Section>
 
-      <CompletedBtn isopen={isOpen}>Activity Completed</CompletedBtn>
+      <CompletedBtn isopen={isOpen} onClick={handleCompletedClick}>
+        Activity Completed
+      </CompletedBtn>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={2500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        transition={Slide}
+        theme="dark"
+      />
     </Container>
   );
 };
