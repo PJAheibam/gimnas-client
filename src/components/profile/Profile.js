@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Container,
   Button,
@@ -69,25 +69,6 @@ const Profile = ({ exerciseTime, setExerciseTime }) => {
     localStorage.removeItem(BREAK_TIME);
     localStorage.removeItem(EXERCISE_TIME);
   };
-
-  // for handling scroll behaviour
-  useEffect(() => {
-    function preventScroll(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      return false;
-    }
-    //in large device it will not work
-    if (isOpen && !isLarge) {
-      window.addEventListener("wheel", preventScroll, { passive: false });
-    }
-    if (isLarge) {
-      window.removeEventListener("wheel", preventScroll, { passive: false });
-    }
-    return () => {
-      window.removeEventListener("wheel", preventScroll, { passive: false });
-    };
-  }, [isOpen, isLarge]);
 
   return (
     <>
