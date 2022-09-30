@@ -166,7 +166,7 @@ const Profile = ({ exerciseTime, setExerciseTime }) => {
           isopen={isOpen}
           style={{ justifyContent: "space-between", marginTop: "0.5rem" }}
         >
-          <SubHeading>Breaktime time</SubHeading>
+          <SubHeading>Break time</SubHeading>
           <Time>
             <animated.span>
               {breakApi.value.to((b) => b.toFixed(0))}
