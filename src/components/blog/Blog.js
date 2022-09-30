@@ -112,6 +112,7 @@ const Blog = () => {
           componentWillUnmount() life-cycle methods of class based components
           into functional component.
         </Text>
+        <SubTitle>useEffect use cases</SubTitle>
         <Ul>
           <Li>Running once on mount: fetch API data</Li>
           <Li>Running on state change: validating input field</Li>
@@ -127,7 +128,6 @@ const Blog = () => {
           </Li>
         </Ul>
       </Section>
-      <SubTitle>useEffect use cases</SubTitle>
     </Container>
   );
 };

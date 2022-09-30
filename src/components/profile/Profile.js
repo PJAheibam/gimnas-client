@@ -18,7 +18,10 @@ import {
   BlackOverlay,
 } from "./Profile.styles";
 import profilePic from "../../assets/profile-pic.jpg";
-import { MdOutlineArrowForwardIos as Arrow } from "react-icons/md";
+import {
+  MdOutlineArrowForwardIos as Arrow,
+  MdMyLocation as LocIcon,
+} from "react-icons/md";
 import { useSpring, animated } from "react-spring";
 import { useBreakpoint } from "react-use-size";
 import { toast, ToastContainer, Slide } from "react-toastify";
@@ -32,6 +35,8 @@ const Profile = ({ exerciseTime, setExerciseTime }) => {
   const localBreakTime = parseInt(localStorage.getItem(BREAK_TIME));
 
   const isLarge = !useBreakpoint(1280);
+  const isMedium = useBreakpoint(1024);
+  console.log("isMedium", isMedium);
   const [breakTime, setBreakTime] = useState(
     isNaN(localBreakTime) ? 0 : localBreakTime
   );
@@ -70,17 +75,19 @@ const Profile = ({ exerciseTime, setExerciseTime }) => {
     function preventScroll(e) {
       e.preventDefault();
       e.stopPropagation();
-
       return false;
     }
     //in large device it will not work
-    if (isOpen && !isLarge) {
+    if (isOpen && isMedium) {
       window.addEventListener("wheel", preventScroll, { passive: false });
+    }
+    if (!isMedium) {
+      window.removeEventListener("wheel", preventScroll, { passive: false });
     }
     return () => {
       window.removeEventListener("wheel", preventScroll, { passive: false });
     };
-  }, [isOpen]);
+  }, [isOpen, isMedium]);
 
   return (
     <>
@@ -91,7 +98,15 @@ const Profile = ({ exerciseTime, setExerciseTime }) => {
           </Button>
           <Info isopen={isOpen}>
             <Name>Prosenjit Singha</Name>
-            <Location>Juri, Sylhet</Location>
+            <Location>
+              <LocIcon
+                style={{
+                  marginRight: "0.5rem",
+                }}
+                color="white"
+              />{" "}
+              Juri, Sylhet
+            </Location>
           </Info>
           <Button
             aria-label="close"

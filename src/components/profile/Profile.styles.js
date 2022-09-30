@@ -77,6 +77,9 @@ export const Name = styled.h3`
 `;
 
 export const Location = styled.p`
+  display: block;
+  display: flex;
+  align-items: center;
   color: ${(p) => p.theme.text.secondary};
 `;
 
