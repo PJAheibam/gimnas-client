@@ -11,6 +11,9 @@ export const GlobalStyle = createGlobalStyle`
     :root{
         color-scheme: dark;
     }
+    html{
+        scroll-behavior: smooth;
+    }
     body{
         font-family: 'Jost', sans-serif;
         background-color: ${(p) => p.theme.background[300]};
