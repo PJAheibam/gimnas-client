@@ -64,6 +64,8 @@ export const Button = styled.button`
   background-color: ${(p) => p.theme.palette.secondaryBg};
   color: ${(p) => p.theme.palette.secondaryActive};
   font-weight: 500;
+  font-size: 1rem;
+  /* border: 2px solid ${(p) => p.theme.palette.secondaryBg}; */
   letter-spacing: 1px;
   padding: 0.5em 1em;
   text-align: center;
