@@ -24,4 +24,5 @@ export const GlobalStyle = createGlobalStyle`
     .Toastify__close-button > svg {
         fill: ${(p) => p.theme.palette.error}
     }
+
 `;

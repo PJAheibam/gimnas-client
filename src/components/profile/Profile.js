@@ -23,7 +23,7 @@ import {
   MdMyLocation as LocIcon,
 } from "react-icons/md";
 import { useSpring, animated } from "react-spring";
-import { useBreakpoint } from "react-use-size";
+import { useBreakpoint, useBreakpoints } from "react-use-size";
 import { toast, ToastContainer, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -35,8 +35,7 @@ const Profile = ({ exerciseTime, setExerciseTime }) => {
   const localBreakTime = parseInt(localStorage.getItem(BREAK_TIME));
 
   const isLarge = !useBreakpoint(1280);
-  const isMedium = useBreakpoint(1024);
-  console.log("isMedium", isMedium);
+  const [isSmall, isMedium] = useBreakpoints([640, 1024]);
   const [breakTime, setBreakTime] = useState(
     isNaN(localBreakTime) ? 0 : localBreakTime
   );
@@ -198,7 +197,7 @@ const Profile = ({ exerciseTime, setExerciseTime }) => {
           Activity Completed
         </CompletedBtn>
         <ToastContainer
-          position="bottom-right"
+          position={isSmall ? "top-center" : "bottom-left"}
           autoClose={2500}
           hideProgressBar={false}
           newestOnTop={false}
