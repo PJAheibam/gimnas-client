@@ -3,8 +3,8 @@ import FocusStyles from "../../styles/FocusStyles";
 import { device } from "../../utils/device";
 
 const openStyles = css`
-  left: 0;
-  padding-inline: max(1.5rem, calc(100vw - 1280px));
+  /* left: 0; */
+  /* padding-inline: max(1.5rem, calc(100vw - 1280px)); */
 `;
 
 const easing = "cubic-bezier(0.38, 0.41, 0.24, 0.99)";
@@ -14,25 +14,24 @@ export const Container = styled.aside`
   top: 0;
   padding: 1.5rem;
   padding-top: 0.95rem;
-  left: calc(100vw - max(1.5rem, calc(100vw - 1280px)) - 60px - 1.5rem);
-  ${(p) => (p.isopen ? openStyles : "")}
+  right: 0;
   width: 100%;
   height: 100%;
   background-color: ${(props) =>
     props.isopen ? props.theme.background[300] : "transparent"};
-  /* background-color: rgba(0, 0, 0, 0.35); */
   overflow-y: auto;
   overscroll-behavior-y: contain;
   z-index: 10;
-  transition: left 1000ms ${easing}, background-color 1000ms ${easing};
+  transform: ${(p) =>
+    p.isopen
+      ? "translateX(0%)"
+      : "translateX(calc(100% - 1.5rem - 44px - max(1.5rem, calc(100vw - 1280px))))"};
+  transition: transform 1000ms ${easing}, background-color 1000ms ${easing};
   @media ${device.md} {
     width: 400px;
-    ${(p) => (p.isopen ? "left: calc(100% - 400px);" : "")}
   }
   @media ${device.xl} {
-    width: calc(100vw - 1280px + 20rem);
-    left: calc(100vw - 26rem);
-    padding-inline: 2rem;
+    top: 80px;
   }
 `;
 

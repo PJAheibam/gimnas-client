@@ -30,6 +30,9 @@ export const Cards = styled.section`
 export const Container = styled.article`
   margin-bottom: 2rem;
   @media ${device.xl} {
-    width: calc(100% - 20rem);
+    width: 70%;
+  }
+  @media ${device.xxl} {
+    width: 100%;
   }
 `;

@@ -4,7 +4,7 @@ import logo from "../../assets/logo.png";
 
 const Footer = () => {
   return (
-    <Container>
+    <Container as="footer">
       <LogoContainer>
         <Logo src={logo} alt="footer logo" />
       </LogoContainer>

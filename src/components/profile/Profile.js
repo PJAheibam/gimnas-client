@@ -93,7 +93,7 @@ const Profile = ({ exerciseTime, setExerciseTime }) => {
             aria-label="close"
             title="close button"
             onClick={() => setOpen(false)}
-            style={{ marginLeft: "auto" }}
+            style={{ marginLeft: "auto", display: isLarge ? "none" : "block" }}
           >
             <Arrow size="1.5rem" />
           </Button>

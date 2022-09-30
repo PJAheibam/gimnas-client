@@ -12,9 +12,6 @@ export const Container = styled(Wrapper)`
   min-height: 100px;
   margin-top: 2.5rem;
   background-color: ${(p) => p.theme.background[200]};
-  @media ${device.xl} {
-    width: calc(100% - 406px);
-  }
 `;
 
 export const Logo = styled.img`
