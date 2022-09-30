@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
-  Wrapper,
   Button,
   Image,
   ProfileContainer,
@@ -16,6 +15,7 @@ import {
   BreakBtn,
   Time,
   CompletedBtn,
+  BlackOverlay,
 } from "./Profile.styles";
 import profilePic from "../../assets/profile-pic.jpg";
 import { MdOutlineArrowForwardIos as Arrow } from "react-icons/md";
@@ -66,119 +66,139 @@ const Profile = ({ exerciseTime, setExerciseTime }) => {
     localStorage.removeItem(EXERCISE_TIME);
   };
 
+  useEffect(() => {
+    function preventScroll(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      return false;
+    }
+    //in large device it will not work
+    if (isOpen && !isLarge) {
+      window.addEventListener("wheel", preventScroll, { passive: false });
+    }
+    return () => {
+      window.removeEventListener("wheel", preventScroll, { passive: false });
+    };
+  }, [isOpen]);
+
   return (
-    <Container isopen={isOpen}>
-      <ProfileContainer>
-        <Button onClick={() => setOpen(true)}>
-          <Image src={profilePic} />
-        </Button>
-        <Info isopen={isOpen}>
-          <Name>Prosenjit Singha</Name>
-          <Location>Juri, Sylhet</Location>
-        </Info>
-        <Button
-          aria-label="close"
-          title="close button"
-          onClick={() => setOpen(false)}
-          style={{ marginLeft: "auto" }}
-        >
-          <Arrow size="1.5rem" />
-        </Button>
-      </ProfileContainer>
+    <>
+      <Container isopen={isOpen}>
+        <ProfileContainer>
+          <Button onClick={() => setOpen(true)} title="profile info">
+            <Image src={profilePic} />
+          </Button>
+          <Info isopen={isOpen}>
+            <Name>Prosenjit Singha</Name>
+            <Location>Juri, Sylhet</Location>
+          </Info>
+          <Button
+            aria-label="close"
+            title="close button"
+            onClick={() => setOpen(false)}
+            style={{ marginLeft: "auto" }}
+          >
+            <Arrow size="1.5rem" />
+          </Button>
+        </ProfileContainer>
 
-      <Section isopen={isOpen} style={{ marginTop: "2rem" }}>
-        <Info isopen={isOpen}>
-          <Value data-unit="kg">53</Value>
-          <Prop>Weight</Prop>
-        </Info>
-        <Info isopen={isOpen}>
-          <Value data-unit="ft">5.85</Value>
-          <Prop>Height</Prop>
-        </Info>
-        <Info isopen={isOpen}>
-          <Value data-unit="yrs">24</Value>
-          <Prop>Age</Prop>
-        </Info>
-      </Section>
+        <Section isopen={isOpen} style={{ marginTop: "2rem" }}>
+          <Info isopen={isOpen}>
+            <Value data-unit="kg">53</Value>
+            <Prop>Weight</Prop>
+          </Info>
+          <Info isopen={isOpen}>
+            <Value data-unit="ft">5.85</Value>
+            <Prop>Height</Prop>
+          </Info>
+          <Info isopen={isOpen}>
+            <Value data-unit="yrs">24</Value>
+            <Prop>Age</Prop>
+          </Info>
+        </Section>
 
-      <Heading isopen={isOpen}>Add a break</Heading>
-      <Section isopen={isOpen}>
-        <BreakBtn
-          isactive={breakTime === 10 ? "true" : "false"}
-          onClick={() => updateBreakTime(10)}
-        >
-          10s
-        </BreakBtn>
-        <BreakBtn
-          isactive={breakTime === 20 ? "true" : "false"}
-          onClick={() => updateBreakTime(20)}
-        >
-          20s
-        </BreakBtn>
-        <BreakBtn
-          isactive={breakTime === 30 ? "true" : "false"}
-          onClick={() => updateBreakTime(30)}
-        >
-          30s
-        </BreakBtn>
-        <BreakBtn
-          isactive={breakTime === 40 ? "true" : "false"}
-          onClick={() => updateBreakTime(40)}
-        >
-          40s
-        </BreakBtn>
-        <BreakBtn
-          isactive={breakTime === 50 ? "true" : "false"}
-          onClick={() => updateBreakTime(50)}
-        >
-          50s
-        </BreakBtn>
-      </Section>
+        <Heading isopen={isOpen}>Add a break</Heading>
+        <Section isopen={isOpen}>
+          <BreakBtn
+            isactive={breakTime === 10 ? "true" : "false"}
+            onClick={() => updateBreakTime(10)}
+          >
+            10s
+          </BreakBtn>
+          <BreakBtn
+            isactive={breakTime === 20 ? "true" : "false"}
+            onClick={() => updateBreakTime(20)}
+          >
+            20s
+          </BreakBtn>
+          <BreakBtn
+            isactive={breakTime === 30 ? "true" : "false"}
+            onClick={() => updateBreakTime(30)}
+          >
+            30s
+          </BreakBtn>
+          <BreakBtn
+            isactive={breakTime === 40 ? "true" : "false"}
+            onClick={() => updateBreakTime(40)}
+          >
+            40s
+          </BreakBtn>
+          <BreakBtn
+            isactive={breakTime === 50 ? "true" : "false"}
+            onClick={() => updateBreakTime(50)}
+          >
+            50s
+          </BreakBtn>
+        </Section>
 
-      <Heading isopen={isOpen}>Exercise details</Heading>
-      <Section
-        isopen={isOpen}
-        style={{ justifyContent: "space-between", marginBottom: "0.5rem" }}
-      >
-        <SubHeading>Exercise time</SubHeading>
-        <Time>
-          <animated.span>
-            {exerciseTimeApi.eTime.to((t) => t.toFixed(0))}
-          </animated.span>
-          &thinsp;seconds
-        </Time>
-      </Section>
+        <Heading isopen={isOpen}>Exercise details</Heading>
+        <Section
+          isopen={isOpen}
+          style={{ justifyContent: "space-between", marginBottom: "0.5rem" }}
+        >
+          <SubHeading>Exercise time</SubHeading>
+          <Time>
+            <animated.span>
+              {exerciseTimeApi.eTime.to((t) => t.toFixed(0))}
+            </animated.span>
+            &thinsp;seconds
+          </Time>
+        </Section>
 
-      <Section
-        isopen={isOpen}
-        style={{ justifyContent: "space-between", marginTop: "0.5rem" }}
-      >
-        <SubHeading>Breaktime time</SubHeading>
-        <Time>
-          <animated.span>
-            {breakApi.value.to((b) => b.toFixed(0))}
-          </animated.span>
-          &thinsp;seconds
-        </Time>
-      </Section>
+        <Section
+          isopen={isOpen}
+          style={{ justifyContent: "space-between", marginTop: "0.5rem" }}
+        >
+          <SubHeading>Breaktime time</SubHeading>
+          <Time>
+            <animated.span>
+              {breakApi.value.to((b) => b.toFixed(0))}
+            </animated.span>
+            &thinsp;seconds
+          </Time>
+        </Section>
 
-      <CompletedBtn isopen={isOpen} onClick={handleCompletedClick}>
-        Activity Completed
-      </CompletedBtn>
-      <ToastContainer
-        position="bottom-right"
-        autoClose={2500}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        transition={Slide}
-        theme="dark"
-      />
-    </Container>
+        <CompletedBtn isopen={isOpen} onClick={handleCompletedClick}>
+          Activity Completed
+        </CompletedBtn>
+        <ToastContainer
+          position="bottom-right"
+          autoClose={2500}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          transition={Slide}
+          theme="dark"
+        />
+      </Container>
+      {/* this will not show on large device */}
+      {!isLarge && <BlackOverlay isopen={isOpen} />}
+    </>
   );
 };
 

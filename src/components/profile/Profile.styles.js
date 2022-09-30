@@ -7,7 +7,7 @@ const openStyles = css`
   padding-inline: max(1.5rem, calc(100vw - 1280px));
 `;
 
-const easing = "cubic-bezier(0.38, 0.41, 0.3, 1.07)";
+const easing = "cubic-bezier(0.38, 0.41, 0.24, 0.99)";
 
 export const Container = styled.aside`
   position: fixed;
@@ -23,8 +23,12 @@ export const Container = styled.aside`
   /* background-color: rgba(0, 0, 0, 0.35); */
   overflow-y: auto;
   overscroll-behavior-y: contain;
+  z-index: 10;
   transition: left 1000ms ${easing}, background-color 1000ms ${easing};
-
+  @media ${device.md} {
+    width: 400px;
+    ${(p) => (p.isopen ? "left: calc(100% - 400px);" : "")}
+  }
   @media ${device.xl} {
     width: calc(100vw - 1280px + 20rem);
     left: calc(100vw - 26rem);
@@ -164,5 +168,22 @@ export const CompletedBtn = styled(Button)`
   transition: opacity 700ms ease-out, background-color 500ms ease;
   &:hover {
     background-color: ${(p) => p.theme.palette.secondaryActive};
+  }
+`;
+
+export const BlackOverlay = styled.div`
+  overscroll-behavior-y: contain;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  width: 0;
+  height: 100%;
+  z-index: 5;
+  transform: ${(p) => (p.isopen ? "translateX(0%)" : "translateX(-100%)")};
+  transition: transform 1000ms ${easing};
+  @media ${device.md} {
+    width: calc(100% - 400px);
   }
 `;
