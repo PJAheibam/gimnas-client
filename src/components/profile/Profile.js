@@ -178,20 +178,20 @@ const Profile = ({ exerciseTime, setExerciseTime }) => {
         <CompletedBtn isopen={isOpen} onClick={handleCompletedClick}>
           Activity Completed
         </CompletedBtn>
-        <ToastContainer
-          position={isSmall ? "top-center" : "bottom-left"}
-          autoClose={2500}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          transition={Slide}
-          theme="dark"
-        />
       </Container>
+      <ToastContainer
+        position={isSmall ? "top-center" : "bottom-left"}
+        autoClose={2500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        transition={Slide}
+        theme="dark"
+      />
       {/* this will not show on large device */}
       {!isLarge && <BlackOverlay isopen={isOpen} />}
     </>
